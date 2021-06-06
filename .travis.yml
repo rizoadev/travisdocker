@@ -1,7 +1,7 @@
-language: python
+language: cpp
 
 os: linux
-dist: trusty
+dist: bionic
 sudo: required
 
 services:
@@ -26,11 +26,13 @@ before_install:
     if [[ -d $HOME/docker ]] && [[ ! -z "$(ls $HOME/docker)" ]]; then docker load -i $HOME/docker/*.tar.gz; fi
   - echo "$(docker images -a)"
 
+before_script:
+  - sudo chown -R 1000 .
+
 install:
   - >
     docker build --cache-from=builder:latest,debian:buster -t builder .
-
-  jobs:
+jobs:
   include:
     - stage: build
       script:
