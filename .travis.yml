@@ -30,7 +30,7 @@ before_script:
 
 install:
   - >
-    docker build --cache-from=builder:latest,debian:buster -t builder .
+    docker build --cache-from=debian:buster -t builder .
 jobs:
   include:
     - stage: build
