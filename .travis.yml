@@ -26,7 +26,7 @@ before_install:
   - echo "$(docker images -a)"
 
 before_script:
-  - sudo chown -R 1000 .
+  - echo "kopet here"
 
 install:
   - >
