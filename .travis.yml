@@ -1,8 +1,7 @@
-language: cpp
+language: shell
 
 os: linux
 dist: bionic
-sudo: required
 
 services:
   - docker
