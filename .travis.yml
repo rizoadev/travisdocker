@@ -27,12 +27,14 @@ before_install:
   - echo "$(docker images -a)"
 
 install:
-  - docker build --cache-from=builder:latest,debian:buster -t builder .
+  - >
+    docker build --cache-from=builder:latest,debian:buster -t builder .
 
   jobs:
   include:
     - stage: build
       script:
-        - bash ./build.sh
+        - >
+          bash ./build.sh
 stages:
   - build
