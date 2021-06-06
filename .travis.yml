@@ -25,6 +25,7 @@ before_install:
   #- >
   #  if [[ -d $HOME/docker ]] && [[ ! -z "$(ls $HOME/docker)" ]]; then docker load -i $HOME/docker/*.tar.gz; fi
   #- echo "$(docker images -a)"
+  #
 
 before_script:
   - echo "kopet here"
